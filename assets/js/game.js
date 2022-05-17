@@ -1,3 +1,9 @@
+// Game States
+// "WIN" - Player robot has defeated all enemy-robots
+//    * Fight all enemy-robots
+//    * Defeat each enemy-robot
+// "LOSE" - Player robot's health is zero or less
+
 // player var
 
 var playerName = window.prompt("What is your robot's name?");
@@ -8,13 +14,9 @@ var playerAttack = 10;
 
 var playerMoney = 10;
 
-// Note the lack of quotation marks around the playerName
-// You can also log multiple values at once like this
-console.log(playerName, playerAttack, playerHealth);
-
 // enemy var
 
-var enemyName = "Roberto"
+var enemyNames = ["Roberto", "Amy Android", "Robo Trumble"];
 
 var enemyHealth = 50;
 
@@ -22,7 +24,7 @@ var enemyAttack = 12;
 
 // create function
 
-var fight = function() {
+var fight = function(enemyName) {
 
     //Alerts players that they are staring the round 
     window.alert("Welcome to Robot Gladiators!");
@@ -33,10 +35,8 @@ var fight = function() {
 
     if (promptFight === "fight" || promptFight === "FIGHT") {
 
-        //remove enemy's health by subtracting the amount set in the playerAttack variable
+    //remove enemy's health by subtracting the amount set in the playerAttack variable
 
-       
-    
 
     //Subtract the value of 'enemyAttack' from the value of 'playerHealth' and use that result to update the value in the 'enemyHealth' variable
 
@@ -100,4 +100,6 @@ var fight = function() {
 
 // execute function
 
-fight();
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+  }
